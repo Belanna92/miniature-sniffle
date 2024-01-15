@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SeekAGeek</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="SeekAGeek, dating, geek, nerd, dating app, Greek Geek">
+  <meta name="description" content="Form to determine whether or not a user is geeky enough to sign up to SeekAGeek">
+  <meta name="author" content="Katie Fletcher">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/SeekAGeek.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="js/validation.js"></script>
+ 
+</head>
+
+<body>
+
+  <header>
+    <h1>
+      Seek A Geek
+    </h1>
+  </header>
+
+  <!--Geek Evaluation Test.
+    The user must pass the evalutation in order for the sign up to be displayed-->  
+  <div id=column_one class="column">
+    <header>
+      <h2>
+        Are you Geek enough?!
+      </h2>
+    </header>
+    <form action="" id="geek_form">       
+        <fieldset id="geek_evaluation_test">
+
+            <label>Do you wear glasses?</label><br>
+            <input type="radio" name="glasses" value="Yes" id="yes_glasses">
+            <label for="yes_glasses">Yes</label>
+            <input type="radio" name="glasses" value="No" id="no_glasses">
+            <label for="no_glasses">No</label><br>
+
+            <label for="drinks">Which of the following do you drink most often?</label><br>
+            <select id="drinks" class="rounded">
+                <option value="none">Select one</option>
+                <option value="blue_V">Blue V</option>
+                <option value="coffee">Coffee</option>
+                <option value="tea">Tea</option>
+            </select><br>
+
+            <label for="romantic_outing">Which best fits your idea of a romantic outing?</label><br>
+            <select id="romantic_outing" class="rounded">
+                <option value="none">Select one</option>
+                <option value="star_wars_convention">Attending a Star Wars convention</option>
+                <option value="apple_store">Visiting the Apple Store</option>
+                <option value="subway_meal">Sharing a Subway meal</option>
+                <option value="cinema">Going to the cinema</option>
+                <option value="french_meal">Sharing a meal at a French restaurant</option>
+            </select><br>
+
+            <label for="sortable">Rank the attributes of your dream match</label><br>
+            <p class="note">drag and drop - from most to least appealing</p>
+            <ul id="sortable">
+                <li id=5 class="ui-state-default">Robotic voice</li>
+                <li id=3 class="ui-state-default">High-index lenses</li>
+                <li id=1 class="ui-state-default">Socially awkward</li>
+                <li id=0.5 class="ui-state-default">Fit and healthy</li>
+                <li id=0 class="ui-state-default">Whitened teeth</li>
+              </ul>
+            
+            <label for="watched_tv_shows">Which of the following have you watched?</label><br>
+            <p class="note">You may select multiple or none</p>
+            <select name="watched_tv_shows" id="watched_tv_shows" multiple>
+                <option value="big_bang_theory">The Big Bang Theory</option>
+                <option value="mandalorian">The Mandalorian</option>
+                <option value="battlestar_galactica">Battlestar Galactica</option>
+                <option value="breaking_bad">Breaking Bad</option>
+                <option value="cosc120_lectures">COSC120 Lectures and Tutorials</option>
+                <option value="last_of_us">The Last of Us</option>
+              </select>
+        </fieldset>
+        <div id="error" class="error"></div>
+        <input type="submit" value="Submit Evaluation">
+    </form>
+  </div>
+
+  <!--Seek A Geek Sign up form
+  This div is hidden until the user passes the test-->  
+  <div id="column_two" class="column">
+      <header>
+      <h3>
+        Seek A Geek Sign Up Form
+      </h3>
+      </header>    
+      <form action="" id="geek_info">    
+          <fieldset id="Registration_Form">
+          
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" class="rounded"><br>
+
+              <label for="age">Age</label>
+              <input type="text" id="age" name="age" class="rounded"><br>
+
+              <label for="email">Email</label>
+              <input type="text" id="email" name="email" class="rounded"><br>
+
+              <label for="mobile">Mobile</label>
+              <input type="text" id="mobile" name="mobile" class="rounded"><br>
+          </fieldset>
+          <div id="error2" class="error"></div>
+          <input type="submit" value="Submit Registration">
+      </form>
+    </div>
+
+    <!--Images to be displayed based on the user's geek score
+    These divs are hidden until needed-->
+    <div id="not_geeky_enough" class="geek_pic">
+      <h4>You DO NOT qualify for Seek A Geek, you simply aren't geeky enough!</h4>
+      <div id="not_geeky_enough_score" class="score_message"></div>
+      <img src="img/not_geeky_enough_option_2.png">
+    </div>
+    <div id="Welcome_geek" class="geek_pic">
+      <h4>Congratulations Geek! And welcome to Seek A Geek!</h4>
+      <div id="Welcome_geek_score" class="score_message"></div>
+      <img src="img/welcome_geek_option_2.png">
+    </div>
+    <div id="super_geek" class="geek_pic">
+      <h4>YOU'RE A SUPER GEEK!! Welcome to Seek A Geek!</h4>
+      <div id="super_geek_score" class="score_message"></div>
+      <img src="img/super_geek_option_1.png">
+    </div>
+
+    <!-- Success message when someone succefully signs up to Seek A Geek.
+    This div is hidden until needed -->
+    <div id="column_three" class="column">
+      <h3>Congratulations!<br>
+        You have succesffuly signed up to Seek A Geek</h3>
+    </div>
+
+</body>
+</html>
